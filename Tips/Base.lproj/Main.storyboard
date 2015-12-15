@@ -51,11 +51,12 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" minimumFontSize="17" id="RS2-QY-ZjT">
-                                <rect key="frame" x="152" y="92" width="148" height="30"/>
+                                <rect key="frame" x="150" y="92" width="148" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
                                 <connections>
+                                    <action selector="keyboardAnimations:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="Q0V-TO-XeY"/>
                                     <action selector="onEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="Phc-kA-aa6"/>
                                 </connections>
                             </textField>
@@ -80,41 +81,48 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="||" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tj6-DJ-XH2">
-                                <rect key="frame" x="25" y="306" width="42" height="21"/>
+                                <rect key="frame" x="20" y="372" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aUh-J9-Le9">
+                                <rect key="frame" x="64" y="372" width="245" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|||" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6HK-B0-ssQ">
-                                <rect key="frame" x="25" y="335" width="42" height="21"/>
+                                <rect key="frame" x="20" y="401" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gX7-jK-KnP">
-                                <rect key="frame" x="69" y="335" width="245" height="29"/>
+                                <rect key="frame" x="64" y="401" width="245" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="||||" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dne-B5-tB3">
-                                <rect key="frame" x="25" y="364" width="42" height="21"/>
+                                <rect key="frame" x="20" y="430" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6pg-0B-9Zs">
-                                <rect key="frame" x="69" y="364" width="245" height="28"/>
+                                <rect key="frame" x="64" y="430" width="245" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aUh-J9-Le9">
-                                <rect key="frame" x="69" y="306" width="245" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Splits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NZr-9u-D6b">
+                                <rect key="frame" x="20" y="338" width="93" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -137,6 +145,10 @@
                         <outlet property="splitBill2Label" destination="aUh-J9-Le9" id="3VD-ta-mti"/>
                         <outlet property="splitBill3Label" destination="gX7-jK-KnP" id="MS3-XT-0VD"/>
                         <outlet property="splitBill4Label" destination="6pg-0B-9Zs" id="b1I-UX-7fo"/>
+                        <outlet property="splitLabel" destination="NZr-9u-D6b" id="e4d-xe-Ktu"/>
+                        <outlet property="splitNum2" destination="Tj6-DJ-XH2" id="oiB-Fp-0ML"/>
+                        <outlet property="splitNum3" destination="6HK-B0-ssQ" id="dhM-XC-pqv"/>
+                        <outlet property="splitNum4" destination="dne-B5-tB3" id="Ayi-Za-tzA"/>
                         <outlet property="splittwoLabel" destination="aUh-J9-Le9" id="F7x-Vd-us0"/>
                         <outlet property="tipControl" destination="1Zf-cD-nHT" id="LCh-I5-gCa"/>
                         <outlet property="tipLabel" destination="xj3-eV-tNu" id="6UA-s6-L3W"/>

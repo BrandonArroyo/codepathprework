@@ -17,7 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var splitBill2Label: UILabel!
     @IBOutlet weak var splitBill3Label: UILabel!
     @IBOutlet weak var splitBill4Label: UILabel!
-    
+    @IBOutlet weak var splitNum2: UILabel!
+    @IBOutlet weak var splitNum3: UILabel!
+    @IBOutlet weak var splitNum4: UILabel!
+    @IBOutlet weak var splitLabel: UILabel!
     
 
     @IBOutlet weak var splittwoLabel: UILabel!
@@ -35,6 +38,15 @@ class ViewController: UIViewController {
         billField.text = ""
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
+        splitBill2Label.alpha = 0
+        splitBill3Label.alpha = 0
+        splitBill4Label.alpha = 0
+        splitLabel.alpha = 0
+
+        splitNum2.alpha = 0
+        splitNum3.alpha = 0
+        splitNum4.alpha = 0
+     
     }
 
 override func viewWillAppear(animated: Bool) {
@@ -53,8 +65,16 @@ override func viewWillAppear(animated: Bool) {
         let good = defaults.doubleForKey("goodPercentage")
         let goodTitle = String(format: "%.f%%", good)
         tipControl.setTitle(goodTitle, forSegmentAtIndex: 2)
-       
-
+    
+    
+            splitBill2Label.alpha = 1
+            splitBill3Label.alpha = 1
+            splitBill4Label.alpha = 1
+            splitNum2.alpha = 1
+            splitNum3.alpha = 1
+            splitNum4.alpha = 1
+             splitLabel.alpha = 1
+    
     }
 
     
@@ -83,11 +103,38 @@ override func viewWillAppear(animated: Bool) {
         splitBill2Label.text = String(format:"$%.2f", billAmount/2)
         splitBill3Label.text = String(format:"$%.2f", billAmount/3)
         splitBill4Label.text = String(format:"$%.2f", billAmount/4)
-
+      
     }
 
+    @IBAction func keyboardAnimations(sender: AnyObject) {
+        UIView.animateWithDuration(0.0, animations: {
+            // This causes first view to fade in and second view to fade out
+            self.splitBill2Label.alpha = 0
+            self.splitBill3Label.alpha = 0
+            self.splitBill4Label.alpha = 0
+            self.splitNum2.alpha = 0
+            self.splitNum3.alpha = 0
+            self.splitNum4.alpha = 0
+             self.splitLabel.alpha = 0
+            
+        })
+    }
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
+        if(view.endEditing(true) && billField.text != ""){
+            UIView.animateWithDuration(0.4, animations: {
+            // This causes first view to fade in and second view to fade out
+                self.splitBill2Label.alpha = 1
+                self.splitBill3Label.alpha = 1
+                self.splitBill4Label.alpha = 1
+                self.splitLabel.alpha = 1
+                self.splitNum2.alpha = 1
+                self.splitNum3.alpha = 1
+                self.splitNum4.alpha = 1
+           
+            })
+        }
+    
     }
 
 }
