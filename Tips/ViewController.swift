@@ -31,21 +31,23 @@ class ViewController: UIViewController {
         defaults.setDouble(10, forKey: "poorPercentage")
         defaults.setDouble(15, forKey: "mediumPercentage")
         defaults.setDouble(20, forKey: "goodPercentage")
+        defaults.setBool(true, forKey: "switcherSelected")
         defaults.synchronize()
         
         
         
         billField.text = ""
+        
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
-        splitBill2Label.alpha = 0
-        splitBill3Label.alpha = 0
-        splitBill4Label.alpha = 0
-        splitLabel.alpha = 0
+        splitBill2Label.alpha = 1
+        splitBill3Label.alpha = 1
+        splitBill4Label.alpha = 1
+        splitLabel.alpha = 1
 
-        splitNum2.alpha = 0
-        splitNum3.alpha = 0
-        splitNum4.alpha = 0
+        splitNum2.alpha = 1
+        splitNum3.alpha = 1
+        splitNum4.alpha = 1
      
     }
 
@@ -65,7 +67,6 @@ override func viewWillAppear(animated: Bool) {
         let good = defaults.doubleForKey("goodPercentage")
         let goodTitle = String(format: "%.f%%", good)
         tipControl.setTitle(goodTitle, forSegmentAtIndex: 2)
-    
     
             splitBill2Label.alpha = 1
             splitBill3Label.alpha = 1
@@ -100,9 +101,9 @@ override func viewWillAppear(animated: Bool) {
           
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
-        splitBill2Label.text = String(format:"$%.2f", billAmount/2)
-        splitBill3Label.text = String(format:"$%.2f", billAmount/3)
-        splitBill4Label.text = String(format:"$%.2f", billAmount/4)
+        splitBill2Label.text = String(format:"$%.2f", total/2)
+        splitBill3Label.text = String(format:"$%.2f", total/3)
+        splitBill4Label.text = String(format:"$%.2f", total/4)
       
     }
 
@@ -121,7 +122,7 @@ override func viewWillAppear(animated: Bool) {
     }
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
-        if(view.endEditing(true) && billField.text != ""){
+        if(view.endEditing(true)){
             UIView.animateWithDuration(0.4, animations: {
             // This causes first view to fade in and second view to fade out
                 self.splitBill2Label.alpha = 1
@@ -136,6 +137,26 @@ override func viewWillAppear(animated: Bool) {
         }
     
     }
-
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if defaults.boolForKey("switcherSelected"){
+            
+            billField.text = ""
+            totalLabel.text = "$0.00"
+            tipLabel.text = "$0.00"
+            splitBill2Label.text = "$0.00"
+            splitBill3Label.text = "$0.00"
+            splitBill4Label.text = "$0.00"
+            print("Shake Event On")
+        }
+        else{
+           print("Shake Event off")
+        }
+    }
 }
+
 
